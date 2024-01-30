@@ -4,7 +4,12 @@
   "description": "Cypress Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "triggerAllTest-headless": "npx cypress run",
+    "triggerAllTest-dashboard": "npx cypress run --record --key 70bc6b76-c966-4db7-843a-7f4c2acce91b",
+    "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
+    "triggerAllTest-autostore": "npx cypress run --spec cypress/e2e/automation-test-store/*",
+    "triggerAllTest-autostore-dashbard": "npx cypress run --spec cypress/e2e/automation-test-store/* record --key 70bc6b76-c966-4db7-843a-7f4c2acce91b"    
   },
   "author": "Omer Irfan",
   "license": "ISC",
