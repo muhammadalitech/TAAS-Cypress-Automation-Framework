@@ -2,7 +2,7 @@
 // /// <reference types ="Cypress-xpath" />
 
 
-describe("Alias and Invoke", () => {
+describe("Alias and invoke", () => {
 
     beforeEach("", () => {
         cy.visit("https://www.automationteststore.com/")
