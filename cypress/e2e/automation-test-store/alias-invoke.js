@@ -19,7 +19,7 @@ describe("Alias and Invoke", () => {
 
     })
 
-    it("Validate products thumbnail ", () => {
+    it("Validate the products thumbnail ", () => {
         cy.get(".thumbnail ").as("homePageProducts")
 
 
