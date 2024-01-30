@@ -2,7 +2,7 @@
 // /// <reference types ="Cypress-xpath" />
 
 
-describe("Test Conact us form via Automation Test Store", ()=>{
+describe("Test Conact us form via the Automation Test Store", ()=>{
 
     beforeEach("",()=>{
         cy.visit("https://www.automationteststore.com/")
