@@ -1,5 +1,7 @@
 /// <reference types ="Cypress" />
 
+const cypress = require("cypress")
+
 describe("Test Conact us form via WebDriverUni", ()=>{
 
     beforeEach("",()=>{
@@ -42,6 +44,16 @@ describe("Test Conact us form via WebDriverUni", ()=>{
         cy.get('body').contains('Error: all fields are required')
 
         //cy.location("pathname").should("equal","/Contact-Us/contact_us.php")
+    })
+
+    it("Checking different browser ",()=>{
+
+        if(Cypress.isBrowser('firefoc')){
+
+        }
+        else{
+            cy.visit("https://webdriveruniversity.com")
+        }
     })
 })
 
