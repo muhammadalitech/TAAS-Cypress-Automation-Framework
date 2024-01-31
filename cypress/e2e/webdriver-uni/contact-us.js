@@ -48,7 +48,7 @@ describe("Test Conact us form via WebDriverUni", ()=>{
 
     it("Checking different browser ",()=>{
 
-        if(Cypress.isBrowser('firefoc')){
+        if(Cypress.isBrowser('firefox')){    // if it is firefox browser then run this test else it will not be run if it is not firefox
 
         }
         else{
