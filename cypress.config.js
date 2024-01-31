@@ -10,6 +10,8 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
     screenshotOnRunFailure:true,
+    video: false,
+    videoUploadOnPasses : false
   },
 });
 
