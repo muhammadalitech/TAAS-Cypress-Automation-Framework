@@ -11,7 +11,7 @@ module.exports = defineConfig({
     experimentalSessionAndOrigin: true,
     screenshotOnRunFailure:true,
     video: false,
-    videoUploadOnPasses : false
+    videoUploadOnPasses : true
   },
 });
 
