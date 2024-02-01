@@ -1,10 +1,14 @@
 /// <reference types ="Cypress" />
 
 describe("Verify checkboxes via webdriveruni", ()=>{
-
-    it("Check and validate checkbox", ()=>{
+    beforeEach( function() {
         cy.visit("https://www.webdriveruniversity.com")
         cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
+
+    })
+    it("Check and validate checkbox", ()=>{
+        //cy.visit("https://www.webdriveruniversity.com")
+        //cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
 
         //cy.get('#checkboxes > :nth-child(1) > input').check()   
         //cy.get('#checkboxes > :nth-child(1) > input').check().should('be.checked')  // verify first checkbox to be checked
@@ -16,8 +20,8 @@ describe("Verify checkboxes via webdriveruni", ()=>{
     })
 
     it("UnCheck and validate checkbox", ()=>{
-        cy.visit("https://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
+        //cy.visit("https://www.webdriveruniversity.com")
+        //cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
 
         cy.get('#checkboxes > :nth-child(5) > input').as('option-3')
         //cy.get('@option-3').uncheck()
@@ -25,9 +29,9 @@ describe("Verify checkboxes via webdriveruni", ()=>{
         
     })
 
-    it.only("Check multiple checkboxes", ()=>{
-        cy.visit("https://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
+    it("Check multiple checkboxes", ()=>{
+        //cy.visit("https://www.webdriveruniversity.com")
+        //cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})  // overcome issue of multiple browser tabs
 
         cy.get("input[type='checkbox']").check(["option-1", "option-2", "option-3", "option-4"])   // checking multiple checkboxes at one time 
 
@@ -36,4 +40,15 @@ describe("Verify checkboxes via webdriveruni", ()=>{
 
         
     })
+
+    /* ==== Test Created with Cypress Studio ==== */
+    it('Click on all Radio Buttons', function() {
+        /* ==== Generated with Cypress Studio ==== */
+        cy.get('[value="green"]').check();
+        cy.get('[value="blue"]').check();
+        cy.get('[value="yellow"]').check();
+        cy.get('#radio-buttons > [value="orange"]').check();
+        cy.get('[value="purple"]').check();
+        /* ==== End Cypress Studio ==== */
+    });
 })

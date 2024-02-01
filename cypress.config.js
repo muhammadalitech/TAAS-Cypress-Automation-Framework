@@ -13,6 +13,7 @@ module.exports = defineConfig({
     video: false,
     videoUploadOnPasses : true
   },
+  "experimentalStudio": true  // to enable cypress studios 
 });
 
 
