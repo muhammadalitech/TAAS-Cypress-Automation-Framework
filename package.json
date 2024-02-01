@@ -12,12 +12,17 @@
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
     "triggerAllTest-autostore": "npx cypress run --spec cypress/e2e/automation-test-store/*",
     "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/e2e/automation-test-store/* record --key 70bc6b76-c966-4db7-843a-7f4c2acce91b",
-    "cypress-multi-browser": "npm run triggerAllTest-autostore -- --browser electron --headed & npm run triggerAllTest-autostore -- --browser edge --headed"    
+    "cypress-multi-browser": "npm run triggerAllTest-autostore -- --browser electron --headed & npm run triggerAllTest-autostore -- --browser edge --headed"
   },
   "author": "Omer Irfan",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress": "^12.14.0"
+    "cypress": "^12.14.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "setpDefinitions": "cypress/support/step_definitions"
   }
 }
