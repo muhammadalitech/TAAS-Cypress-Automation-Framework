@@ -46,14 +46,14 @@ describe("Test Conact us form via WebDriverUni", ()=>{
         //cy.location("pathname").should("equal","/Contact-Us/contact_us.php")
     })
 
-    it("Checking different browser ",()=>{
+    // it("Checking different browser ",()=>{
 
-        if(Cypress.isBrowser('firefox')){    // if it is firefox browser then run this test else it will not be run if it is not firefox
+    //     if(Cypress.isBrowser('firefox')){    // if it is firefox browser then run this test else it will not be run if it is not firefox
 
-        }
-        else{
-            cy.visit("https://webdriveruniversity.com")
-        }
-    })
+    //     }
+    //     else{
+    //         cy.visit("https://webdriveruniversity.com")
+    //     }
+    // })
 })
 
