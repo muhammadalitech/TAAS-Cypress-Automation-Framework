@@ -1,6 +1,6 @@
 /// <reference types ="Cypress" />
 
-const cypress = require("cypress")
+//const cypress = require("cypress")
 
 describe("Test Conact us form via WebDriverUni", ()=>{
 
