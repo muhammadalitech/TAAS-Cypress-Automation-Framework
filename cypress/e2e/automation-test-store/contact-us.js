@@ -4,11 +4,15 @@
 
 describe("Test Conact us form via the Automation Test Store", ()=>{
 
+    before(function(){
+        cy.fixture('userDetails').as("user") // fixtures and aliases
+        })
+    
     beforeEach("",()=>{
         cy.visit("https://www.automationteststore.com/")
     }
     )
-    it.only("Should be able to submit a successful submission via contact us form ",()=>{
+    it("Should be able to submit a successful submission via contact us form ",()=>{
         
         cy.get("a[href$='contact']").click().then( function( linkText){
             cy.log("The output of the text is :" +linkText.text())
@@ -18,8 +22,13 @@ describe("Test Conact us form via the Automation Test Store", ()=>{
 
         //cy.get("pathname").should("equal","/contact")
 
-        cy.get('#ContactUsFrm_first_name').type("Omer")
-        cy.get('#ContactUsFrm_email').type("atorney@gmail.com")
+        cy.get('@user').then((user)=>{
+            cy.get('#ContactUsFrm_first_name').type(user.first_name)
+            cy.get('#ContactUsFrm_email').type(user.email)
+        })
+
+        // cy.get('#ContactUsFrm_first_name').type("Omer")
+        // cy.get('#ContactUsFrm_email').type("atorney@gmail.com")
         cy.get('#ContactUsFrm_email').should("have.attr",'name','email')
         cy.get('#ContactUsFrm_enquiry').type("feedback is good")
 

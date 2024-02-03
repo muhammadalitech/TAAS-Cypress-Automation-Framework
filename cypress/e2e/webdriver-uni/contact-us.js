@@ -4,9 +4,14 @@
 
 describe("Test Conact us form via WebDriverUni", ()=>{
 
-    beforeEach("",()=>{
+    before(function(){
         //cy.visit("https://webdriveruniversity.com")
         //cy.visit("https://webdriveruniversity.com/Contact-Us/contactus.html")
+
+        cy.fixture('example').then(function(data){
+            //this.data = data
+            globalThis.data = data
+        })
     }
     )
     it("Should be able to submit a successful submission via contact us form ",()=>{
@@ -17,12 +22,14 @@ describe("Test Conact us form via WebDriverUni", ()=>{
         cy.title().should('include', 'WebDriver | Contact Us') // to valide document title 
         cy.url().should('include', 'contactus')  // validate the document url using include as it does not need full text
 
-        cy.get('[name="first_name"]').type("Omer")
-        cy.get('[name="last_name"]').type("Irfan")
-        cy.get('[name="email"]').type("oi@g.com")
+        //cy.get('[name="first_name"]').type("Omer")
+        cy.get('[name="first_name"]').type(data.first_name)
+        
+        cy.get('[name="last_name"]').type(data.last_name)
+        cy.get('[name="email"]').type(data.email)
         //cy.get('[name="email"]').should('have.attr','name','email')
 
-        cy.get('textarea.feedback-input').type("running successfully. Yay!!!")
+        cy.get('textarea.feedback-input').type(data.body)
         //cy.get('textarea.feedback-input').should('have.attr','name','message')
         cy.get('[type="submit"]').click()
 
@@ -36,8 +43,8 @@ describe("Test Conact us form via WebDriverUni", ()=>{
         cy.visit("https://webdriveruniversity.com")
         cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true})
 
-        cy.get('[name="first_name"]').type("Omer")
-        cy.get('[name="last_name"]').type("Irfan")
+        cy.get('[name="first_name"]').type(data.first_name)
+        cy.get('[name="last_name"]').type(data.last_name)
         //cy.get('[name="email"]').type("oi@g.com")
         cy.get('textarea.feedback-input').type("running successfully. Yay!!!")
         cy.get('[type="submit"]').click()
