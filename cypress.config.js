@@ -13,7 +13,11 @@ module.exports = defineConfig({
     experimentalSessionAndOrigin: true,
     screenshotOnRunFailure:true,
     video: false,
-    videoUploadOnPasses : true
+    videoUploadOnPasses : true,
+    reporter: 'cypress-multi-reporters',
+    reporterOptions: {
+      configFile: 'reporter-config.json',
+    },
   },
   "experimentalStudio": true  // to enable cypress studios 
 });
