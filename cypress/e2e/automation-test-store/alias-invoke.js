@@ -13,7 +13,7 @@ describe("Alias and invoke", () => {
         cy.get("a[href*='product/category&path=']").contains('Hair Care').click()
 
         cy.get(".fixed_wrapper .prdocutname").eq(0).invoke('text').as('productThumbnail')  // using alias will reduce the size of code
-
+                                                                                            //invoke is used to extract the text to new variable in alias section
         cy.get('@productThumbnail').its('length').should('be.gt', 5)
         cy.get('@productThumbnail').should('include', 'Seaweed Conditioner')   // validating text
 
